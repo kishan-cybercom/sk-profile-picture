@@ -1,0 +1,24 @@
+<div class="block block-dashboard-info">
+	<div class="block-title"><strong><?php echo __('Profile Picture'); ?></strong></div>
+	<div class="block-content">
+		<div class="box box-information">
+			<strong class="box-title">
+				<span><?php echo __('Profile Picture'); ?></span>
+			</strong>
+			<div class="box-content">
+				<img src="<?php echo $this->getProfilePic(); ?>" width="150">
+			</div>
+		</div>
+		<div class="box box-newsletter">
+			<strong class="box-title">
+				<span><?php echo __('Upload New Profile Picture'); ?></span>
+			</strong>
+			<div class="box-content">
+				<form action="<?php echo $this->getUrl('sk_profilepic/upload'); ?>" enctype="multipart/form-data" method="POST">
+					<input type="file" name="sk_profile_pic" accept="image/*">
+					<button type="submit"><span><?php echo __('Upload'); ?></span></button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
