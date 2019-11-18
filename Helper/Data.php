@@ -12,6 +12,6 @@ class Data extends AbstractHelper
 		$this->_skProfilePic = $skProfilePic;
 	}
 	public function getProfilePicById($id){
-		return $this->_skProfilePic->getCustomer($id)->getAvatar();
+		return $this->_skProfilePic->getCustomer($id)->getProfilePic();
 	}
 }
