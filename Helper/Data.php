@@ -20,6 +20,11 @@ class Data extends AbstractHelper
 
 	public function getProfilePicById($id){
 		$mediaUrl = $this ->_storeManager-> getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA );
-		return $mediaUrl.'sk_profile_pic/'.$this->_skProfilePic->getCustomer($id)->getSkProfilePic();
+		$url = $this->getViewFileUrl('SK_ProfilePic/media/default.jpg');
+		if(file_exists($mediaUrl.'sk_profile_pic/'.$this->_skProfilePic->getCustomer($id)->getSkProfilePic())){
+			$storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+			$url = $mediaUrl.'sk_profile_pic/'.$this->_skProfilePic->getCustomer($id)->getSkProfilePic();
+		}
+		return $url;
 	}
 }
